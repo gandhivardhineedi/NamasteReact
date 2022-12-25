@@ -1,0 +1,95 @@
+1) What is Emmet?
+
+Ans. Emmet is a Web-Developer's toolkit to imporve the Html and Css workflow.When you type Css-like or HTML-like expression. Emmet will 
+ dynamically phrase your abrevation and gernate a "snippet" (re-usable chunk of code) based on the abrevation we typed. It is mostly 
+ used in the HTML, XML and CSS, but we can use it for other programming languages.
+
+ some commonly used expressions:
+
+ html:5 for generting a html boilerplate.
+ h1 + h2 + p + div +... for generting sibling html elements.
+ div>h1>.. gor generting childs.
+
+ 2) What is the difference between a Libray and Framework?
+
+Ans.
+
+Libray : A Libray is a pre-written code that is used to simplity the task.It is a set of pre-functions and classes that a developer 
+can re-use to simplity a task. Here the control lies with the devloper when to call and where to call a libray in his code.
+
+Framework : A Framework provides a foundation to build a application for a platform. It has a pre-written pieases code which will
+ performs a common task and uses the code provided by the developer for the custom functionality.
+
+Key difference :- Inverse of control (IoC), By using libray you have the control over the flow of the program. The libray can be called 
+by a devloper whenever and whereever needed. Where as incase of Framework it's Frameworks code that will call our code.
+
+3) What is a CDN? why do we use CDN it?
+
+Ans.
+
+CDN (Common Delivery Network) it is a system of distributed servers that delivers the webcontent to a user based on the 
+geographical location.
+
+Setting up a React appication is sometimes a time-consuming process, especially when we learning React or what to set-up react 
+for a already existing web-application. So CDN comes handly ir requires minimal set-up steps.
+
+4) why react is called as react?
+
+Ans.
+
+React is developed developed for the applications that has costantly changing data. Since react is used as View in 
+the MVC. that means when user clicks and changes the application data. The view should "React" or change the application
+events for those users.
+
+5) what is the use of crossorigin in script tag?
+
+Ans.
+
+To know about crossorin in script tag, we need to understand about CORS.
+
+Cross Origin Resource Sharing (CORS) is a HTTP-Header based mechanism that allows a Server to indicate any origins (domain) except it's own from which a browser 
+should permit the resource loading.Or in another way we can defined it as mechanism in which the browser will do a "Preflight" request to server which is hosted in the 
+the cross-orgin resources and check weather that host will permit the request, I will be done by passing the HTTP- Method  and the header of the actual request.
+
+Here In our case we are tring to access the web-content (resources) from CDN. which is hosted in a different domain. To access the resources we are using crossorigin
+attribute in script tag. crossorigin specifies that the CORS is support when the while loading the we-content from the CDN.No credentials are passed while retriving the 
+resources.
+
+6) what is the difference between the React and ReactDOM?
+
+Ans.
+    InOrder to work with React in browser (ReactJS). we need to we need to include two libraies:
+    1. React (React Libray is responsible for creating views).
+    2. ReactDOM (ReactDOM Libray is responsible for actual rendering of the UI in the browser).
+
+7) what is the difference between the react.development.js and react.production.js files Via CDN?
+
+Ans.
+
+1) react.development.js is for development purpuse only. It is not that optimized. It will be good for learning and for project developemts.
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+2) react.production.js is for the production purpuse. It is optimized and minified. I will be faster when compared to development one.
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+
+
+8) what is the difference between async and defer?
+
+Ans.
+
+async and defer are the boolean attributes which are used to used in the script tag. to load external script efficently.
+
+Incase of async the scripts are fetched asynchornously along with the HTML parseing, once the scripts are loading is done. the it will stop the HTML parsing 
+and starts execution of the scrpits loaded. once the scripts are executed fully. then it will contines the HTML parsing.
+It won't guaranties the order of execution of the scripts as the first come first executed.
+It is ideal for the modular and independent scripts loading.
+
+Incase of defer the scripts are fetched asynchornously along with the HTML parseing, but scrpits will executed only the HTML parseing is done fully.
+It will guaranties the order of execution of the scrpits. as all the scripts are executed at the end.
+It is Ideal for the dependent scripts loading.
+
+
+
