@@ -1,0 +1,116 @@
+Throey assignment:
+Chapter -02 Igniting My React APP
+
+1) What is NPM?
+
+ans. npm is a worlds largest software registry, where the developers from different parts of the world can share or borrow packages
+using npm.
+npm can be defined in two ways:
+1) It is a online repository for publishing of open-source Node.js projects.
+2) It is a command-line utility for interacting with repository that aids in package installation, version management and dependancy
+management.
+
+2) What is 'Parcel/webpack'? why do we need it?
+
+ans. Parcel/Webpack are basically module bundlers or simpliy bundlers.
+
+A bundler is a develpoment tool that combines our code files into one single minified file, that is production-ready loadable in the
+browser. a greate feature is it generate a dependancy graph as it traverse our first code files. this implies the beginning with the entry 
+point specified by us.
+
+Why do we need it?
+The module bundlers keep track of the both our source files dependencies and 3rd party dependencies. this dependancy greph guaraentees that
+all sources and associated code files are kept uptodate and error free.
+
+3) What is .Parcel-cache?
+
+ans. The .Parcel-cache is a folder stores information about our project when parcel builds it, so that information can be reused while
+rebuilding it. So it don't have to rephase ans reanalize everything from scratch. This makes parcel faster in development mode.
+
+4) What is npx?
+ ans. Node package execute is a npm pakage runner, it executes npm package without intalling it. npx can even execute npm packages
+ from the npm registry even without installing it. 
+  npx makes use of CLI tool and executables hosted in the npm registry like create-react-app that don't need to be installedand only 
+  need to run once to get started.
+
+5) what is difference between devDependencies and dependecies?
+
+ans. Dependecies: the dependancies that are requiried in the production of your application.
+DevDepandencies: the dependancies that are required in the local develpment or testing of your application.
+
+6) what is tree shaking?
+
+ans. Tree shaking is aprocess in JS that removes the ded or unused code in our applictaion by the help of the import and export statement to 
+detect if code module are exported and imported for use in between the JS files.
+we use bundler to automatically remive dead code while bundling multiple js files into single file.
+
+
+
+7) what is hot module replacement?
+
+ans HMR replaces,exchanges and addes modules to the application while it is running without fully reloading the browser.
+
+8) List down any five superpowers of parcel and describe any 3 super powers in your own words?
+
+ans. My favourite 5 superpowers are:
+1) Hot Module Replacement.
+2) HTTPS on DEV.
+3) File Watcher Algorithm.
+4) Zero Config.
+5) Minification.
+
+2) HTTPS on Dev: sometime we may need HTTPS protocal while developemnt, for testing authentication for a perticular host name etc.,
+so parcel provides https. where we can either generate a certificate or use the exsisting one one by providing it.
+
+parcel index.html --https 
+or
+parcel index.html --cert certificate.cert --key private.key
+
+3) file Watcher Algorithm: To support better develpoment, parcel uses a very fast watchers written in C++ that will watch the 
+very low level file of all the operating systems. I will watches the changes in the root file to the nodemodules based on the event changes
+and meta data of those files, and determines which file need to be rebuild.
+
+5) Minification: parcel uses minifier of the JS, HTML, CSS and SVG to reduce the file size by removing the white space renaming the 
+variables to the shorter names and many other optimizations.
+
+9) what is gitignore file? What should we add and not add into it?
+Ans.
+Git Ignore is the file used in the GIT to intentionally untract few files which are not unnesscary for our production are to heaviy
+commit.
+
+we should include all those file which can auto-generated or regenarated at the production level.
+
+we should never include the files which play crucial role for the code development which will never changes in the production level
+and can't be auto-generated.
+
+10) What is the difference between package.json and package-lock.json?
+Ans. package.json is a file which is gernerated while intalling the npm. I contains the meta data related to the project.
+this file used to give the information to npm about the project and about its dependencies.
+
+I will contains version of the project with ^ and ~, which describes about the package versions along with with accessblity 
+for the minor and patch update accessblity.
+
+where as package-lock.josn is same as package.json but it will be more detailed and has the exact version of the packages that are been used
+this file will make sure the same version of the packages installed over the different enviroments,by locking the versions of the 
+dependecies.
+
+11) Why should I not modify package-lock.json?
+Ans. We should never modify package-lock.json, because package-lock.json is only file which keep track of the exact versioning
+of the packages that are been used in our project, altering the meta data may causes inconsistacies over the different enviroments.
+
+12) What is node_modules ? Is it a good idea to push that on git?
+Ans. node_modules is the directory where the dependancies and modules that are used in our project are placed. when we install any 
+package it will be downloaded from the web and comes and sits inside the node_modules.
+
+It is not Ideal and bad Idea to push the node_modules into git, as they can heaviy to commit and push, but also they can be easily 
+generated at the production end, using npm install cmd.
+
+13) What is the dist folder?
+Ans. dist or distribution folder is a dynamically generated folder where after build the production ready minified files are been placed
+for serving.
+
+14) What is browserlists?
+Ans. Browser list ia tool which is used to specify which kind of browser is supported by your front-end app by specifing the queries
+in the config file.
+
+eg: -
