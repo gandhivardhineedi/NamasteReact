@@ -1,0 +1,26 @@
+Theory Assignment:
+
+Chapter -03 : Laying foundation
+
+1) what is JSX?
+
+ans. JSX (Javascript Extention syntax) or (Javascript XML) which is introduced to simplify the React code writting by using HTML like
+syntax. It is a syntatic suger for React.createElement API. It will produces React "Element" and later redendered into DOM.
+
+2) What are the superpowers of JSX?
+
+ans. 
+
+1. It easy to code as it is a HTML like mark-up language.
+2. It can be converted into React Element using babel.
+
+3) Role of the 'type' attribute in script tag in HTML? what are the options that I can pass to it?
+
+ans. type attribute in script tag specifies the MIME type of the script and identify content of script.
+
+<script type="text/javascript"></script>
+
+the diferent types of options that can be passed are:
+
+text/javascript, text/ecmascript, application/javascript and application/ecmascript.
+
