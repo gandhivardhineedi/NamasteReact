@@ -1,0 +1,35 @@
+.HeaderClass{
+    box-shadow: 0.5px 0.5px 25px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;  
+    color: white;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LogoClass{
+    display: contents;
+  
+}
+
+img{
+    margin: 5px;
+}
+
+input{
+    height: 25px;
+    width: 500px;
+    appearance: none;
+    border: 0px inset rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    outline: none;
+}
+
+.SearchClass{
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
