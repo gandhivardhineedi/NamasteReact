@@ -1,0 +1,196 @@
+Chapter 06 Exploring the world
+
+Assignment 
+
+1) What is Microservices?
+
+Ans) A microservice is a architectural pattern which has emerged from the world of domain-driven design, continuous delivery, platform and infracturcture automation, scalable sysytems, polyglot programming and persistance.
+
+
+A microservice architecture (newer model for application development) where  we group up the main functionalities into services instead of maintaining them under one application. these loosly coupled services which can be deployed, and maintained independently. each of these service is responsible for discrete task and can communicate with other service through simple APIs to solve a larger complex problem.
+
+Key Benifits:
+
+1) As the constituent (part of the whole application) services are small, they can be built by one or more small teams from scratch seperated by service boundaries which makes it easier to scaleup.
+
+2)Once developed, these services can be deployed independantly of each other and we can easy to identify the hot services and scale them independantly of whole application.
+fault isolation is easier and whole application won't stop working if one service has error. we can fix it the error and redeploy that service instead of the whole application.
+
+3)Another advantage is we can use multiple technologies to develop the service, there is no need of limiting to one technology. we can use the best technology for that service to acheive specific functionality.
+
+Reference: https://medium.com/hashmapinc/the-what-why-and-how-of-a-microservices-architecture-4179579423a9
+
+2) What is  Monolith architecture?
+
+Ans) Monolithic architecture is the traditional structure for software application.
+
+Monolithic is an all-in-one architecture, where in all aspects of the software operate as a single unit. 
+
+Monolithic architecture is a unified development model for software application. It has 3 components:
+
+1) Client-side user interface
+2) Server-side application
+3) Data interface
+
+All there parts interact with a single database.Software built on this model operates with one base of code.
+
+
+Pros:
+1)It's easier to take care of issues that affect the whole application.(caching, logging, performance monitoring, and handling. basically easier to manage).
+2)It's easier to test and debug. (as everything is at one place end-to-end testing is easier).
+3)It's easier to deploy and develop. (it requires only one file or directory. so deployment is easier).
+
+Cons:
+1)It's hard to scale or change. (as everything is at one place, changes must involve the entire architecture. The entire application must scale all at once).
+2)The code becomes complicated. (as all in one base code, it will become increasingly complex as the application grows and changes).
+3)It's challenging to integrate with new technology. (as all the application lies in one base code, it's difficult to integrate. the code rewrite from scratch should accommodate).
+
+Reference : https://www.integrate.io/glossary/what-is-monolithic-architecture/
+
+3) What is the difference between Monolith and Microservice?
+
+Ans)    Monolithic Vs Microservice
+
+A monolithic software application may be a simple office suite software program for individual user.
+monolithic connects to single database.
+
+A microservices operates as a loose collection of functionalities (known as services) that work together under the basket of a single application. each service is deployed into there own cloud-based environment and single team dedicated to it.
+
+Reference : https://www.integrate.io/glossary/what-is-monolithic-architecture/
+
+4) Why do we need a useEffect Hook?
+
+Ans) The useEffect Hook lets you perform side effect in react function components.
+
+What is a react side-effect?
+A react side-effect occurs when we use something that is outside the scope of Rect.jsin our React components.
+
+Eg:- Browser APIs like localStorage.
+
+outside the scope means that is not part of the react framework.
+
+when we use react with any of the Browser's api such as the local storage, we are creating a side-effect by storing some value in the local storage.
+
+useEffect(() => {
+localStorage.setItem('some key', true); 
+}, []);
+
+if we use the native DOM methods instead of the ReactDOM is another exmple of creating side-effect.
+calling the API using fetch.
+
+Effetively managing it is the key facter. by keeping track of the changes in the side-effects.
+
+Why do we nee useEffect??
+
+by using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed. that callback function is treated as side-effect.
+and call it later after performing the DOM updates.It will be called once after the intial render (later after performing the DOM updates) and every-time state change detection rerender.
+
+
+we can acheive thing inthe Life -cycles also but it fources usto split the logic even through conceptually code in both of them is related to the same effect. or repeating the logic even thought the the effect is same.
+
+Syntax: useEffect(callBackFn,[`dependency array`]);
+
+function callBackFn() {
+    {...}//internal logic or effect logic.
+    return () => {clean-up logic}//optional
+}
+
+the side-effect logic may return a function. this is a optional cleanup mechanism for effects. every effect may return a function that cleans up after it.
+
+When exactly it will be called? React cleanup when the component unmounts, However as we know, effects run for every render and not just once. This is why React also cleans from the previous render before running the effects next time.
+
+Reference: https://reactjs.org/docs/hooks-effect.html
+https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/
+
+5) What is Optional Chaining?
+
+The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called is undefined or null, it returns undefined instead of throwing an error.
+
+const god = {
+    name: 'Indra',
+    consert: 'sachi',    
+};
+
+const consert = god?.consert; //sachi
+
+const vahana = god?.vahana; //undefined property
+
+console.log(god.Powers?()); //undefined function
+
+console.log(god.wepoans?[0]); //undefined array
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+6) What is Shimmer UI?
+
+Ans) A Shimmer UI resembles the page's actual UI, so users will understand how quickly the web or mobile app will load even before the content has shown up. It gives people an idea of what's about to come and what's happening (it's currently loading) when a page full of content/data takes a while to load.
+
+Basically moadren form of loader.
+
+7) What is the difference between JS expression and JS statement.
+
+Ans) a Js expression is a bit of JavaScript code that produces a value.
+
+example: 1, "Hi", 5*5, num> 100, isHappy ? :) : :( , [1,2,3].pop(),
+
+A JavaScript program is a sequence of statements. Each statement is an instruction for the computer to do something.
+
+exmaple: let hi = 5; if(hi > 10) { //More statements here }; throw new Error('...');
+
+statement often have "slots" for expression. we can put any expression we like into those slots.
+
+statements and expression are not same.
+
+In a JSX we have {} where we can only put valid Js expresion. If we try to put a statement we will get an syntax error.
+
+because statement never returns a value but expresion did. for conditions we may use terinary operater.
+
+8) What is Conditional Rendering, explain with a code example?
+
+Sometimes we need to switch betwwen the components or show hide the components based on the state.
+
+So here to acheive that React provides a concept known as conditional rendering. It works exactly same way conditions work in JS.
+
+Example:
+
+const login =  (prop) => { <button onClick={props.onClick}>
+      Logout
+    </button>};
+const logout =  (prop) => { <button onClick={props.onClick}>
+      Login
+    </button>};
+
+const Button = (prop) => {
+    const isLoggedIn = prop.isLoggedIn;
+
+    if(isLoggedIn){
+        return <UserGreeting/>
+    }
+    else{
+         return <GuestGreeting/>   
+    }
+}
+
+or we can use element variable (where we can store the element in a variable and use operater)
+or we can use terinary operater with in the embed expresion in JSX. ({})
+or we can use Logical && operator with in the embed expresion in JSX.
+
+Reference: https://reactjs.org/docs/conditional-rendering.html#:~:text=In%20React%2C%20you%20can%20create,way%20conditions%20work%20in%20JavaScript.
+
+9) What is CORS?
+ans) Cross-Origin Resource Sharing (CORS) is a HTTP-header based mechanism that allows a server to indicate any origin (domain,scheme, or post) other than its own from which a Browser should should permit loading resources.
+
+CORS relies on the mechanism by which Browser make a "Preflight" request to the server hosting the Cross-Origin resource, In order to check that the server will permit the actual request.
+
+resource: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+10) What is async and await? 
+
+ans) async function can contain zero or more await expresion. Await expresios makes promise-returning function behave as thoght they're synchronous by suspending execution until the returned promise is fulfilled or rejected. the resolved value of the promise is treated as the return value of the await expressiom. Use of the asyunc and await enables the use of ordinary try/catch block around asynchronous code.
+
+Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#:~:text=The%20async%20and%20await%20keywords,also%20be%20defined%20as%20expressions.
+
+11) What is the use of `const json = await data.json();` in  getRestaurants()?
+ans) here we are trying to get the JSON object which is the response for the API call. but fetch doesn't return the JSON response body but instead returns a promise that resolves with a Response object.
+
+The Response object, in turn, does not directly contain the actual JSOM response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, we use the json() method, which returns a second promise that resolves with the result of parsing the response body test as JSON.
